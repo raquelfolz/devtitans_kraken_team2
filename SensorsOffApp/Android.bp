@@ -1,0 +1,20 @@
+android_app {
+    name: "SensorsOffApp",
+
+    srcs:          [ "app/src/**/*.java" ],
+    resource_dirs: [ "app/src/main/res" ],
+    static_libs:   [
+        "devtitans.sysprop.SensorProperties",
+        "com.google.android.material_material",
+        "androidx-constraintlayout_constraintlayout",
+        "androidx.test.ext.junit",
+        "androidx.test.espresso.core",
+    ],
+
+    vendor: true,                           // O App será instalado na partição system_ext
+    platform_apis:       true,                           // Permite usar APIs escondidas ("@hide")
+    certificate:         "platform",                     // Necessário para uma aplicação do sistema
+    use_embedded_native_libs: true,
+    manifest: "app/src/main/AndroidManifest.xml",
+}
+

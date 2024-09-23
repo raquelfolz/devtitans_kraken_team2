@@ -1,0 +1,8 @@
+sysprop_library {
+	name: "SensorProperties",
+	srcs: ["SensorProperties.sysprop"],
+	property_owner: "Vendor",
+	api_packages: ["devtitans.sysprop"],
+	vendor_available:true,
+	product_specific:true,
+}

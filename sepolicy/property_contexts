@@ -1,0 +1,5 @@
+# Define o rótulo da propriedade de sistema
+vendor.devtitans.smartlamp.allow_simulated  u:object_r:vendor_smartlamp_prop:s0
+
+vendor.devtitans.smartlamp.enabled  u:object_r:vendor_smartlamp_enabled:s0
+# Linha em branco para evitar erro de compilação
