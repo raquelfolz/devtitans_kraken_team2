@@ -5,6 +5,6 @@ prop {
 	api_name: "smartlamp_enabled"
 	type: Boolean
 	access: ReadWrite
-	scope: Internal
+	scope: Public
 	prop_name: "vendor.devtitans.smartlamp.smartlamp_enabled"
 }

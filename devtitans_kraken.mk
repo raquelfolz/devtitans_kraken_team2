@@ -37,8 +37,6 @@ PRODUCT_PACKAGES += \
 	HelloApp \
 	HelloJava \
 	smartlamp_client \
-	SensorProperties \
-	SensorsOffApp
 
 BOARD_SEPOLICY_DIRS += device/devtitans/kraken/sepolicy
 
@@ -60,3 +58,7 @@ PRODUCT_PACKAGES += SmartlampTestApp
 # Manager
 PRODUCT_PACKAGES += devtitans.smartlampmanager
 
+#PRODUCT_PACKAGES += SensorProperties \
+	#SensorsOffApp \
+
+PRODUCT_PACKAGES += sensor_control

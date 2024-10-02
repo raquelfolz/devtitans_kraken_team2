@@ -5,3 +5,4 @@
 /vendor/bin/hw/devtitans.smartlamp-service  u:object_r:smartlamp_daemon_exec:s0
 # Linha em branco para evitar erro de compilação
 
+/vendor/bin/sensor_control u:object_r:vendor_sensor_ctrl:s0

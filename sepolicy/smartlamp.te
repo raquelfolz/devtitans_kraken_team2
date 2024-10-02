@@ -15,11 +15,18 @@ add_service(smartlamp_daemon, smartlamp_service)             # O daemon irá cri
 # Permite acesso aos arquivos do /sys
 allow smartlamp_daemon sysfs:file { getattr open read write };
 
+type vendor_sensor_ctrl, exec_type, vendor_file_type, file_type;
+
 # Cria e Permite leitura da propriedades de sistema do smartlamp
-vendor_public_prop(vendor_smartlamp_prop)
-allow smartlamp_daemon vendor_smartlamp_prop:file { open getattr map read };
 vendor_public_prop(vendor_smartlamp_enabled)
-allow smartlamp_daemon vendor_smartlamp_enabled:file { open getattr map read };
+set_prop(vendor_sensor_ctrl, vendor_smartlamp_enabled)
+get_prop(vendor_sensor_ctrl, vendor_smartlamp_enabled)
+get_prop(smartlamp_daemon, vendor_smartlamp_enabled)
+vendor_public_prop(vendor_smartlamp_prop)
+get_prop(smartlamp_daemon, vendor_smartlamp_prop)
+
+#allow smartlamp_daemon vendor_smartlamp_prop:file { open getattr map read };
+#allow smartlamp_daemon vendor_smartlamp_enabled:file { open getattr map read };
 
 # Permite que apps privilegiados acessem o daemon e o serviço
 allow platform_app smartlamp_daemon:binder call;

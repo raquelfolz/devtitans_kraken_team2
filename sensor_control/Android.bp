@@ -1,0 +1,7 @@
+cc_binary {
+	name:	"sensor_control",
+	srcs: [ "sensor_control.cpp" ],
+	vendor: true,
+	shared_libs: ["libbase"],
+	header_libs: ["libbase_headers"],
+}
