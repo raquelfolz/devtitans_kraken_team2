@@ -7,6 +7,8 @@ import android.os.RemoteException;
 
 import devtitans.smartlamp.ISmartlamp;                      // Criado pelo AIDL
 
+import android.os.SystemProperties;
+
 public class SmartlampManager {
     private static final String TAG = "DevTITANS.SmartlampManager";
     private IBinder binder;
@@ -34,6 +36,11 @@ public class SmartlampManager {
     // Acessa a (única) instância dessa classe. Se ela não existir ainda, cria.
     // Note o "static" no método. Podemos executá-lo sem precisar instanciar um objeto.
     public static SmartlampManager getInstance() {
+		boolean enabled = SystemProperties.getBoolean("vendor.devtitans.smartlamp.enabled", false);
+		if (! enabled) {
+			Log.d(TAG, "Smartlamp não está habilitado");
+			return null;
+		}
         if (instance == null)
             instance = new SmartlampManager();
 
@@ -42,21 +49,41 @@ public class SmartlampManager {
 
     public int connect() throws RemoteException {
         Log.d(TAG, "Executando método connect() ...");
+		boolean enabled = SystemProperties.getBoolean("vendor.devtitans.smartlamp.enabled", false);
+		if (! enabled) {
+			Log.d(TAG, "Smartlamp não está habilitado");
+			return 0;
+		}
         return service.connect();
     }
 
     public int getLed() throws RemoteException {
         Log.d(TAG, "Executando método getLed() ...");
+		boolean enabled = SystemProperties.getBoolean("vendor.devtitans.smartlamp.enabled", false);
+		if (! enabled) {
+			Log.d(TAG, "Smartlamp não está habilitado");
+			return -1;
+		}
         return service.getLed();
     }
 
     public boolean setLed(int ledValue) throws RemoteException {
         Log.d(TAG, "Executando método setLed(" + ledValue + ") ...");
+		boolean enabled = SystemProperties.getBoolean("vendor.devtitans.smartlamp.enabled", false);
+		if (! enabled) {
+			Log.d(TAG, "Smartlamp não está habilitado");
+			return false;
+		}
         return service.setLed(ledValue);
     }
 
     public int getLuminosity() throws RemoteException {
         Log.d(TAG, "Executando método getLuminosity() ...");
+		boolean enabled = SystemProperties.getBoolean("vendor.devtitans.smartlamp.enabled", false);
+		if (! enabled) {
+			Log.d(TAG, "Smartlamp não está habilitado");
+			return -1;
+		}
         return service.getLuminosity();
     }
 }

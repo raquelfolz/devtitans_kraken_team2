@@ -22,6 +22,7 @@ vendor_public_prop(vendor_smartlamp_enabled)
 set_prop(vendor_sensor_ctrl, vendor_smartlamp_enabled)
 get_prop(vendor_sensor_ctrl, vendor_smartlamp_enabled)
 get_prop(smartlamp_daemon, vendor_smartlamp_enabled)
+get_prop(domain, vendor_smartlamp_enabled)
 vendor_public_prop(vendor_smartlamp_prop)
 get_prop(smartlamp_daemon, vendor_smartlamp_prop)
 

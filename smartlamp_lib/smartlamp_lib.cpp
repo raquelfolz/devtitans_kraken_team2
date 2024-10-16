@@ -6,8 +6,8 @@ using namespace android::base;                         // Permite usar GetBoolPr
 namespace devtitans::smartlamp {                       // Entra no pacote devtitans::smartlamp
 
 int Smartlamp::connect() {
-	bool enabled = GetBoolProperty("vendor.devtitans.smartlamp.enabled", false);
-	if (!enabled) return 0;
+	// bool enabled = GetBoolProperty("vendor.devtitans.smartlamp.enabled", false);
+	// if (!enabled) return 0;
 
     char dirPath[] = "/sys/kernel/smartlamp";
     struct stat dirStat;

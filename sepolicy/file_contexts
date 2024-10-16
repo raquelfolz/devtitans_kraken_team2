@@ -6,3 +6,4 @@
 # Linha em branco para evitar erro de compilação
 
 /vendor/bin/sensor_control u:object_r:vendor_sensor_ctrl:s0
+
