@@ -20,6 +20,9 @@ type vendor_sensor_ctrl, exec_type, vendor_file_type, file_type;
 # Cria e Permite leitura da propriedades de sistema do smartlamp
 vendor_public_prop(vendor_smartlamp_enabled)
 set_prop(vendor_sensor_ctrl, vendor_smartlamp_enabled)
+neverallow {
+	domain -vendor_sensor_ctrl -init
+}	vendor_smartlamp_enabled:property_service set;
 get_prop(vendor_sensor_ctrl, vendor_smartlamp_enabled)
 get_prop(smartlamp_daemon, vendor_smartlamp_enabled)
 get_prop(domain, vendor_smartlamp_enabled)
