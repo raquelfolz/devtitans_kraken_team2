@@ -1,0 +1,22 @@
+vendor_public_prop(vendor_smartlamp_enabled_pre)
+set_prop(vendor_sensor_ctrl, vendor_smartlamp_enabled_pre)
+neverallow {
+	domain -vendor_sensor_ctrl -init
+}	vendor_smartlamp_enabled_pre:property_service set;
+
+vendor_public_prop(vendor_camera_disable_pre)
+set_prop(vendor_sensor_ctrl, vendor_camera_disable_pre)
+neverallow {
+	domain -vendor_sensor_ctrl -init
+}	vendor_camera_disable_pre:property_service set;
+
+vendor_public_prop(vendor_all_sensors_enabled)
+set_prop(vendor_sensor_ctrl, vendor_all_sensors_enabled)
+neverallow {
+	domain -vendor_sensor_ctrl -init
+}	vendor_all_sensors_enabled:property_service set;
+
+set_prop(vendor_sensor_ctrl, camera_config_prop)
+neverallow {
+	domain -vendor_sensor_ctrl -init -vendor_init
+}	camera_config_prop:property_service set;

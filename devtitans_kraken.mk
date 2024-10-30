@@ -12,7 +12,8 @@ PRODUCT_COPY_FILES += \
     device/devtitans/kraken/devtitans.txt:system/etc/devtitans.txt \
     device/devtitans/kraken/kraken.rc:vendor/etc/init/kraken.rc \
 	device/devtitans/kraken/bootanimation.zip:product/media/bootanimation.zip \
-	device/devtitans/kraken/wallpaper.png:product/media/wallpaper.png
+	device/devtitans/kraken/wallpaper.png:product/media/wallpaper.png \
+	device/devtitans/kraken/sensor_properties.rc:vendor/etc/init/sensor_properties.rc
 
 PRODUCT_SYSTEM_PROPERTIES += \
     ro.devtitans.name=Kraken \
@@ -23,6 +24,7 @@ PRODUCT_PRODUCT_PROPERTIES += \
 
 PRODUCT_VENDOR_PROPERTIES += \
     ro.vendor.devtitans.hardware=ModelB
+	persist.vendor.config.sensors_enabled=false
 
 # Seta o diretório de overlays
 PRODUCT_PACKAGE_OVERLAYS = device/devtitans/kraken/overlay

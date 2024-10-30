@@ -2,4 +2,8 @@
 vendor.devtitans.smartlamp.allow_simulated  u:object_r:vendor_smartlamp_prop:s0
 
 vendor.devtitans.smartlamp.enabled  u:object_r:vendor_smartlamp_enabled:s0
+
+vendor.devtitans.smartlamp.previous_enabled u:object_r:vendor_smartlamp_enabled_pre:s0
+vendor.config.previous_disable_cameraservice u:object_r:vendor_camera_disable_pre:s0
+persist.vendor.config.sensors_enabled u:object_r:vendor_all_sensors_enabled:s0
 # Linha em branco para evitar erro de compilação

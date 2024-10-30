@@ -1,0 +1,9 @@
+on boot && property:persist.vendor.config.sensors_enabled=true
+    setprop vendor.devtitans.smartlamp.enabled true
+    setprop config.disable_cameraservice false
+
+on boot && property:persist.vendor.config.sensors_enabled=false
+    setprop vendor.devtitans.smartlamp.enabled false
+    setprop config.disable_cameraservice true
+
+
